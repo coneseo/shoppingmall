@@ -62,4 +62,10 @@ public class User {
         carts = new ArrayList<>();
         orders = new ArrayList<>();
     }
+
+    public void addRole(Role role){
+        if(roles == null)
+            roles = new HashSet<>();
+        roles.add(role);
+    }
 }
