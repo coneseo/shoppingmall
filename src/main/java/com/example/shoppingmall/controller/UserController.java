@@ -30,9 +30,15 @@ public class UserController {
             return "users/login";
     }
 
+
     @GetMapping("/join")
     public String joinform(){
         return "users/joinform";
+    }
+
+    @GetMapping("/welcome")
+    public String welcome(){
+        return "users/welcome";
     }
 
     @PostMapping("/join")
