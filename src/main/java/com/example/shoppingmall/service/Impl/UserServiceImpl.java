@@ -1,9 +1,10 @@
-package com.example.shoppingmall.service;
+package com.example.shoppingmall.service.Impl;
 
 import com.example.shoppingmall.domain.Role;
 import com.example.shoppingmall.domain.User;
 import com.example.shoppingmall.repository.RoleRepository;
 import com.example.shoppingmall.repository.UserRepository;
+import com.example.shoppingmall.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

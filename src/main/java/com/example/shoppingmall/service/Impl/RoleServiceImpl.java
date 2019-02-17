@@ -1,7 +1,8 @@
-package com.example.shoppingmall.service;
+package com.example.shoppingmall.service.Impl;
 
 import com.example.shoppingmall.domain.Role;
 import com.example.shoppingmall.repository.RoleRepository;
+import com.example.shoppingmall.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 

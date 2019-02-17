@@ -37,8 +37,13 @@ public class Beer {
     @OneToMany(mappedBy = "beer")
     private List<OrderProduct> orderProducts;
 
-    @OneToMany(mappedBy = "beer")
+    @OneToMany(mappedBy = "beer",
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}
+    )
     private List<ImageFile> imageFiles;
+
+    @OneToMany(mappedBy = "beer")
+    private List<Comment> comments;// test
 
     public Beer(){
         createDate = new Date();
@@ -46,6 +51,7 @@ public class Beer {
         wishes = new ArrayList<>();
         orderProducts = new ArrayList<>();
         imageFiles = new ArrayList<>();
+        comments = new ArrayList<>();// test
     }
 
     public void addImageFile(ImageFile imageFile){
@@ -54,7 +60,5 @@ public class Beer {
         imageFile.setBeer(this);
         imageFiles.add(imageFile);
     }
-
-    
 
 }
