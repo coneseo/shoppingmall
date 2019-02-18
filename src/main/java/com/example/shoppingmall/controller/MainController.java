@@ -25,7 +25,7 @@ public class MainController {
 
         List<Beer> beers = beerServiceImpl.getBeers(page, categoryId, searchKind, searchStr);
         model.addAttribute("beers", beers);
-        return "indexx";
+        return "index";
     }
 
     @GetMapping("/cart")

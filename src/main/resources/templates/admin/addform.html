@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
+<th:block layout:fragment="css"/></th:block>
+<th:block layout:fragment="script"/></th:script>
+
+<div layout:fragment="content">
 <h1>post writeform</h1>
 
 <form method="post" action="/beers/add" enctype="multipart/form-data">
@@ -24,5 +25,5 @@
     <input type="submit" value="join">
 </form>
 
-</body>
+</div>
 </html>

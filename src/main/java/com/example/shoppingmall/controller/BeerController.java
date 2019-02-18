@@ -3,12 +3,10 @@ package com.example.shoppingmall.controller;
 import com.example.shoppingmall.domain.Beer;
 import com.example.shoppingmall.domain.Category;
 import com.example.shoppingmall.domain.ImageFile;
-import com.example.shoppingmall.security.SecurityUser;
 import com.example.shoppingmall.service.Impl.BeerServiceImpl;
 import com.example.shoppingmall.service.Impl.CategoryServiceImpl;
 import com.example.shoppingmall.service.Impl.ImageFileServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +25,12 @@ public class BeerController {
     private final CategoryServiceImpl categoryServiceImpl;
     private final BeerServiceImpl beerServiceImpl;
     private final ImageFileServiceImpl imageFileServiceImpl;
+
+    @GetMapping("/beer")
+    public String beer(){
+
+        return "beers/beer";
+    }
 
     @GetMapping("/images/{id}")
     @ResponseBody
@@ -56,7 +60,7 @@ public class BeerController {
     public String addform(Model model){
         List<Category> categories = categoryServiceImpl.getAll();
         model.addAttribute("categories", categories);
-        return "beers/addform";
+        return "admin/addform";
     }
 
     @PostMapping("/add")
