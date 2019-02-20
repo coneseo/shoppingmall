@@ -15,6 +15,7 @@ public class Cart {
     private Long id;
     @Column
     private Integer amount;
+
     @Column
     private Long price;
 

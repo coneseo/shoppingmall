@@ -3,6 +3,7 @@ package com.example.shoppingmall.controller;
 import com.example.shoppingmall.domain.User;
 import com.example.shoppingmall.dto.JoinForm;
 import com.example.shoppingmall.service.Impl.UserServiceImpl;
+import com.example.shoppingmall.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -19,7 +20,7 @@ import javax.validation.Valid;
 @RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
-    private final UserServiceImpl userServiceImpl;
+    private final UserService userService;
 
     @GetMapping("/login")
     public String login(
@@ -56,7 +57,7 @@ public class UserController {
         PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
         user.setPassword(passwordEncoder.encode(joinForm.getPassword1()));
 
-        User result = userServiceImpl.join(user);
+        User result = userService.join(user);
 
         return "redirect:/users/welcome";
     }
