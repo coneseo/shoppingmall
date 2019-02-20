@@ -26,11 +26,16 @@ public class BeerController {
     private final BeerServiceImpl beerServiceImpl;
     private final ImageFileServiceImpl imageFileServiceImpl;
 
-    @GetMapping("/beer")
-    public String beer(){
-
+    @GetMapping("/beer/{id}")
+    public String beer(
+            @PathVariable(name = "id") Long id,
+            Model model
+    ){
+        Beer beer = beerServiceImpl.getBeer(id);
+        model.addAttribute("beer",beer);
         return "beers/beer";
     }
+
 
     @GetMapping("/images/{id}")
     @ResponseBody

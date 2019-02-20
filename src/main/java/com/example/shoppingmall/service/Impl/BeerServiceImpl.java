@@ -32,6 +32,13 @@ public class BeerServiceImpl implements BeerService {
     }
 
     @Override
+    @Transactional
+    public Beer getBeer(Long id) {
+
+        return beerRepository.getBeerById(id);
+    }
+
+    @Override
     public List<Beer> getBeers(int page, Long categoryId, String searchKind, String searchStr) {
         int limit = 5;
         int start = page * limit - limit;
