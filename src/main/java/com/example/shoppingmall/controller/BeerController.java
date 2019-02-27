@@ -28,7 +28,7 @@ public class BeerController {
 
     @GetMapping("/beer/{id}")
     public String beer(
-            @PathVariable(name = "id") Long id,
+            @PathVariable(value = "id") Long id,
             Model model
     ){
         Beer beer = beerServiceImpl.getBeer(id);

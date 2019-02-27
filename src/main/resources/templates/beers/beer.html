@@ -2,18 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="layout/default">
-<th:block layout:fragment="css"/></th:block>
-<th:block layout:fragment="script"/></th:script>
-
-    <th:block layout:fragment="html_head">
-    <title>상품 상세보기</title>
+<th:block layout:fragment="css"/>
     <style>
         #quantity:hover {
             cursor: initial;
         }
     </style>
+</th:block>
+<th:block layout:fragment="script"/>
     <script>
-
         function addBasketItem(productId) {
             var stat = $('#quantity').text();
             var quantity = parseInt(stat,10);
@@ -91,7 +88,6 @@
                 } else {
                     tot /= 2;
                 }
-                // "${#numbers.formatCurrency(product.price)}"
                 $("#totalPrice").text(tot);
                 $('#quantity').text(num);
             });
@@ -107,15 +103,13 @@
                 } else {
                     tot *= 2;
                 }
-                // "${#numbers.formatCurrency(product.price)}"
                 $("#totalPrice").text(tot);
                 $('#quantity').text(num);
             });
         });
-
-
     </script>
-    </th:block>
+</th:script>
+
 <div layout:fragment="content">
         <br><br>
         <div style="margin-left: 75px"><h2>상품 상세보기</h2></div>
@@ -124,7 +118,7 @@
 
             <div class="row">
                 <div class="col" style="text-align: center;">
-                    <img width="80%" height="auto;" >
+                    <img width="80%" height="auto;" th:src="'/beers/images/' + ${beer.imageFiles[0].id}">
                 </div>
                 <div class="col" style="padding-top: 35px;">
                     <div style="font-family: Consolas, 돋움"><h2 th:text="${beer.name}"></h2></div>
@@ -173,7 +167,6 @@
                 <!--<img th:src="@{${file.saveFileName}}">-->
             <!--</div>-->
         </div>
-    </th:block>
 </div>
 
 </html>
