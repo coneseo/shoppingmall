@@ -34,7 +34,6 @@ public class BeerServiceImpl implements BeerService {
     @Override
     @Transactional
     public Beer getBeer(Long id) {
-
         return beerRepository.getBeerById(id);
     }
 
