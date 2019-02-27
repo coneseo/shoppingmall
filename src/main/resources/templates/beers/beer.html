@@ -5,8 +5,7 @@
 <th:block layout:fragment="css"/></th:block>
 <th:block layout:fragment="script"/></th:script>
 
-<div layout:fragment="content">
-
+    <th:block layout:fragment="html_head">
     <title>상품 상세보기</title>
     <style>
         #quantity:hover {
@@ -117,7 +116,7 @@
 
     </script>
     </th:block>
-    <th:block layout:fragment="body_main">
+<div layout:fragment="content">
         <br><br>
         <div style="margin-left: 75px"><h2>상품 상세보기</h2></div>
         <hr style="padding-bottom: 40px">
@@ -125,22 +124,20 @@
 
             <div class="row">
                 <div class="col" style="text-align: center;">
-                    <img width="80%" height="auto;" th:src="@{${product.imagePath}}">
+                    <img width="80%" height="auto;" >
                 </div>
                 <div class="col" style="padding-top: 35px;">
-                    <div style="font-family: Consolas, 돋움"><h2 th:text="${product.name}"></h2></div>
+                    <div style="font-family: Consolas, 돋움"><h2 th:text="${beer.name}"></h2></div>
                     <div class="row" style="padding: 20px;">
                         <div class="col">
                             <div style="padding-bottom: 10px"><h5>판매가</h5></div>
                             <div style="padding-bottom: 10px">배송방법</div>
                             <div style="padding-bottom: 10px">배송비</div>
-                            <div style="padding-bottom: 10px">Size</div>
                         </div>
                         <div class="col-8">
-                            <div style="padding-bottom: 10px"><h5><span th:text="${#numbers.formatCurrency(product.price)}"></span></h5></div>
+                            <div style="padding-bottom: 10px"><h5><span th:text="${#numbers.formatCurrency(beer.price)}"></span></h5></div>
                             <div style="padding-bottom: 10px">고객직접선택</div>
                             <div style="padding-bottom: 10px">고객직접선택</div>
-                            <div style="padding-bottom: 10px" th:text="${product.size}"></div>
                         </div>
                     </div>
                     <div class="row" style="padding-top: 30px">
@@ -154,27 +151,27 @@
                         </div>
                         <div class="col-8">
                             <div style="font-family: Consolas, 돋움; padding-bottom: 10px;"><h5>Total Price</h5></div>
-                            <div><h5><span id="totalPrice" th:text="${product.price}"></span></h5></div>
+                            <div><h5><span id="totalPrice" th:text="${beer.price}"></span></h5></div>
                         </div>
                     </div>
                     <div class="form-row" style="padding-top: 25px">
                         <div class="col">
-                            <button type="button" class="btn btn-secondary btn-lg btn-block" th:onclick="'javascript:addBasketItem(' + ${product.id} + ')'"><small>장바구니</small></button>
+                            <button type="button" class="btn btn-secondary btn-lg btn-block" th:onclick="'javascript:addBasketItem(' + ${beer.id} + ')'"><small>장바구니</small></button>
                         </div>
                         <div class="col">
-                            <button type="button" class="btn btn-secondary btn-lg btn-block" th:onclick="'javascript:addWishlistItem(' + ${product.id} + ')'"><small>위시리스트</small></button>
+                            <button type="button" class="btn btn-secondary btn-lg btn-block" th:onclick="'javascript:addWishlistItem(' + ${beer.id} + ')'"><small>위시리스트</small></button>
                         </div>
                     </div>
                     <div style="padding-top: 10px">
-                        <button type="button" class="btn btn-success btn-lg btn-block" th:onclick="'javascript:buyNow(' + ${product.id} + ')'"><small>바로 구매</small></button>
+                        <button type="button" class="btn btn-success btn-lg btn-block" th:onclick="'javascript:buyNow(' + ${beer.id} + ')'"><small>바로 구매</small></button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container-fluid" style="width: 60%;">
-            <div th:if="${not #lists.isEmpty(product.productFiles)}" th:each="file : ${product.productFiles}">
-                <img th:src="@{${file.saveFileName}}">
-            </div>
+            <!--<div th:if="${not #lists.isEmpty(product.productFiles)}" th:each="file : ${product.productFiles}">-->
+                <!--<img th:src="@{${file.saveFileName}}">-->
+            <!--</div>-->
         </div>
     </th:block>
 </div>
