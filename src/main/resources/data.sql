@@ -7,6 +7,5 @@ insert into users (id, create_date, email, name, nickname, password)
 
 insert into categories(id, name, ordering) values(1, 'IPA', 1);
 insert into categories(id, name, ordering) values(2, 'Ale', 2);
-
 insert into categories(id, name, ordering) values(3, 'Lager', 3);
 insert into categories(id, name, ordering) values(4, 'Stout', 4);

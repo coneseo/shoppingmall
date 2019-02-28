@@ -15,6 +15,6 @@ public interface BeerRepository extends JpaRepository<Beer, Long> {
     )
     public List<Beer> getBeers(Long categoryId, int start,int limit,String searchKind, String searchStr);
 
-    @Query(value = "SELECT b FROM Beer b WHERE b.id = id")
+    @Query(value = "SELECT b FROM Beer b WHERE b.id = :id")
     public Beer getBeerById(@Param("id") Long id);
 }

@@ -112,8 +112,6 @@
 
 <div layout:fragment="content">
         <br><br>
-        <div style="margin-left: 75px"><h2>상품 상세보기</h2></div>
-        <hr style="padding-bottom: 40px">
         <div class="container-fluid" style="width: 60%;">
 
             <div class="row">
@@ -121,7 +119,7 @@
                     <img width="80%" height="auto;" th:src="'/beers/images/' + ${beer.imageFiles[0].id}">
                 </div>
                 <div class="col" style="padding-top: 35px;">
-                    <div style="font-family: Consolas, 돋움"><h2 th:text="${beer.name}"></h2></div>
+                    <div><h2 th:text="${beer.name}"></h2></div>
                     <div class="row" style="padding: 20px;">
                         <div class="col">
                             <div style="padding-bottom: 10px"><h5>판매가</h5></div>
@@ -156,17 +154,13 @@
                             <button type="button" class="btn btn-secondary btn-lg btn-block" th:onclick="'javascript:addWishlistItem(' + ${beer.id} + ')'"><small>위시리스트</small></button>
                         </div>
                     </div>
-                    <div style="padding-top: 10px">
+                    <div style="padding-top: 10px; padding-bottom : 45px">
                         <button type="button" class="btn btn-success btn-lg btn-block" th:onclick="'javascript:buyNow(' + ${beer.id} + ')'"><small>바로 구매</small></button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid" style="width: 60%;">
-            <!--<div th:if="${not #lists.isEmpty(product.productFiles)}" th:each="file : ${product.productFiles}">-->
-                <!--<img th:src="@{${file.saveFileName}}">-->
-            <!--</div>-->
-        </div>
+
 </div>
 
 </html>
