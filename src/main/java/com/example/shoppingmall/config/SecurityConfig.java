@@ -21,8 +21,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .requestMatchers(new AntPathRequestMatcher("/templates/**"))
                 .requestMatchers(new AntPathRequestMatcher("/static/**"))
                  .requestMatchers(new AntPathRequestMatcher("/tmp/**"));
-
-
     }
 
     @Override

@@ -8,22 +8,6 @@
 <div layout:fragment="content">
 
 <div class="container pt-5 pb-5">
-<!--<form method="post" action="/beers/add" enctype="multipart/form-data">-->
-    <!--&lt;!&ndash;name : <span th:text="${#authentication.principal.name}"></span><br>&ndash;&gt;-->
-    <!--name : <input type="text" name = "name"><br>-->
-    <!--price : <input type="text" name="price"><br>-->
-    <!--amount : <input type="text" name="amount"><br>-->
-    <!--category : <select name="categoryId">-->
-    <!--<option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>-->
-<!--</select><br>-->
-    <!--image1 : <input type="file" name="image"><br>-->
-    <!--image2 : <input type="file" name="image"><br>-->
-    <!--<input-->
-            <!--type="hidden"-->
-            <!--th:name="${_csrf.parameterName}"-->
-            <!--th:value="${_csrf.token}" />-->
-    <!--<input type="submit" value="join">-->
-<!--</form>-->
 
     <form action="/beers/add" enctype="multipart/form-data" method="post">
         <div class="form-group">
