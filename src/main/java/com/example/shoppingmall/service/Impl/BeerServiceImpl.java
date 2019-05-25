@@ -27,7 +27,6 @@ public class BeerServiceImpl implements BeerService {
         Optional<Category> optionalCategory
                 = categoryRepository.findById(categoryId);
         beer.setCategory(optionalCategory.get());
-
         return beerRepository.save(beer);
     }
 

@@ -98,6 +98,7 @@ public class BeerController {
                 beer.addImageFile(imageFile);
             }
         }
+
         beerServiceImpl.addBeer(beer, categoryId);
         return "redirect:/main";
     }
